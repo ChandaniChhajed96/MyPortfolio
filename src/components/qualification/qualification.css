@@ -1,0 +1,136 @@
+:root {
+    --button-bg: #f0f0f0; /* Default background color for unselected tabs */
+    --button-bg-hover: #b3b1b1; /* Background color on hover for unselected tabs */
+    --button-text-hover: #333; /* Text color on hover for unselected tabs */
+    --button-bg-selected: #333; /* Background color for the selected tab */
+    --button-text-selected: #fff; /* Text color for the selected tab */
+}
+
+.qualification__container {
+    max-width: 768px;
+}
+
+.qualification__tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--mb-2);
+}
+
+.qualification__button {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color); /* Text color for unselected tabs */
+    margin: 0 var(--mb-1);
+    cursor: pointer;
+    background-color: var(--button-bg); /* Default background color for unselected tabs */
+    transition: background-color 0.3s, color 0.3s;
+    padding: 1rem 1.1rem; /* Adjust padding as needed */
+}
+
+/* Hover effect for unselected tabs */
+.qualification__button:not(.qualification__active):hover {
+    background-color: var(--button-bg-hover);
+    color: var(--button-text-hover);
+}
+
+/* Selected tab styles */
+.qualification__active {
+    background-color: var(--button-bg-selected); /* Background color for selected tab */
+    color: var(--button-text-selected); /* Text color for selected tab */
+}
+
+/* Ensure no hover effect on selected tab */
+.qualification__active:hover {
+    background-color: var(--button-bg-selected); /* No change on hover for selected tab */
+    color: var(--button-text-selected); /* No change on hover for selected tab */
+}
+
+.qualification__icon {
+    font-size: 1rem;
+    margin-right: var(--mb-0-25);
+}
+
+.qualification__sections {
+    display: grid;
+    grid-template-columns: 0.5fr;
+    justify-content: center;
+}
+
+.qualification__content {
+    display: none;
+}
+
+.qualification__content-active {
+    display: block;
+}
+
+.qualification__data {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+}
+
+.qualification__title {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+}
+
+.qualification__subtitle {
+    display: inline-block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.qualification__calendar {
+    font-size: var(--small-font-size);
+}
+
+.qualification__rounder {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+}
+
+.qualification__line {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: var(--text-color);
+    transform: translate(6px, -7px);
+}
+
+/* Breakpoint */
+/* For large devices */
+@media screen and (max-width: 992px) {
+    .qualification__container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* For Medium devices */
+@media screen and (max-width: 768px) { 
+    .qualification__container {
+        margin-left: var(--mb-1-5);
+        margin-right: var(--mb-1-5);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .qualification__sections {
+        grid-template-columns: initial;
+    }
+
+    .qualification__button {
+        margin: 0 var(--mb-0-75);
+    }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .qualification__data {
+        gap: 0.5rem;
+    }
+}
